@@ -1,6 +1,6 @@
 <?php
     //Development Connection
-    /*
+     /*
     $host = '127.0.0.1';
     $db = 'attendance_db';
     $user = 'root';
@@ -8,13 +8,14 @@
     $charset = 'utf8mb4';
     */
 
+   
     //Remote Database Connection
     $host = ' remotemysql.com';
     $db = 'gtP3lyrFvW';
     $user = 'gtP3lyrFvW';
     $pass = 'Qohw7Genmx';
     $charset = 'utf8mb4';
-
+    
 
     $dsn="mysql:host=$host;dbname=$db;charset=$charset";
 
