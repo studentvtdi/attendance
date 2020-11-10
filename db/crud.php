@@ -12,10 +12,10 @@ private $db;
     }
 
     //function to insert a new record into the attendee database
-    public function insertAttendees($fname,$lname,$dob,$email,$contact,$speciality){
+    public function insertAttendees($fname,$lname,$dob,$email,$contact,$speciality,$avatar_path){
         try {
             //define sql statement to be executed
-            $sql="INSERT INTO antendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,speciality_id) VALUES(:fname,:lname,:dob,:email,:contact,:speciality)";
+            $sql="INSERT INTO antendee (firstname,lastname,dateofbirth,emailaddress,contactnumber,speciality_id,$avatar_path) VALUES(:fname,:lname,:dob,:email,:contact,:speciality, :avatar_path)";
             //prepare the sql statement for execution
             $stmt=$this->db->prepare($sql);
             //bind all placeholders to the actual values to prevent sql injection
@@ -25,6 +25,7 @@ private $db;
             $stmt->bindparam(':email',$email);
             $stmt->bindparam(':contact',$contact);
             $stmt->bindparam(':speciality',$speciality);
+            $stmt->bindparam(':avatar_path',$avatar_path);
 
             $stmt->execute();
             return true;
